@@ -28,9 +28,8 @@ spl_autoload_register(function($class) {
 require VENDOR_PATH . '/autoload.php';
 
 require CONFIG_PATH . DIRECTORY_SEPARATOR . 'environment.php';
-$proConfig = require CONFIG_PATH . DIRECTORY_SEPARATOR . 'pro.config.php';
-$envConfig = require CONFIG_PATH . DIRECTORY_SEPARATOR . APP_ENVIRONMENT . '.config.php';
-$config = array_replace_recursive($proConfig, $envConfig);
+$config = array_replace_recursive(require CONFIG_PATH . DIRECTORY_SEPARATOR . 'pro.config.php',
+    require CONFIG_PATH . DIRECTORY_SEPARATOR . APP_ENVIRONMENT . '.config.php');
 
 (new Application($config))->run();
 
