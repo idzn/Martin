@@ -1,0 +1,16 @@
+<?php
+
+namespace application\tests;
+
+use application\custom\Test;
+
+class {{name}}Test extends Test
+{
+    public function test_home_page()
+    {
+        $this->initAsserts();
+        $this->sendRequest($this->urlFor('home'));
+        $this->assert('Страница имеет код 200', $this->responseStatusCodeIs(200));
+        return $this->assertsResults();
+    }
+}

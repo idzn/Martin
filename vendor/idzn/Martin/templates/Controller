@@ -1,0 +1,19 @@
+<?php
+
+namespace application\controllers;
+
+use application\custom\Controller;
+
+class {{Name}}Controller extends Controller
+{
+    public function __construct()
+    {
+        parent::__construct();
+        $this->layout = 'martin';
+    }
+
+    public function action_index()
+    {
+        $this->render('{{name}}/index');
+    }
+}

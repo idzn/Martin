@@ -1,0 +1,6 @@
+<?php
+/**
+ * @var application\custom\View $this
+ */
+?>
+<h1>{{name}}.view.php</h1>

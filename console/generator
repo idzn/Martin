@@ -1,0 +1,32 @@
+#!/usr/bin/env php
+<?php
+/**
+ * @link https://github.com/idzn/Martin
+ * @copyright Copyright (c) 2015, Sergei Tolokonnikov
+ * @license https://github.com/idzn/Martin/blob/master/LICENSE
+ */
+
+use Martin\Generator;
+
+define('ROOT_PATH',         __DIR__ . '/..');
+define('VENDOR_PATH',       __DIR__ . '/../vendor');
+define('TEMPLATES_PATH',    __DIR__ . '/../vendor/idzn/Martin/templates');
+define('CONTROLLERS_PATH',  __DIR__ . '/../application/controllers');
+define('VIEWS_PATH',        __DIR__ . '/../application/views');
+define('MODELS_PATH',       __DIR__ . '/../application/models');
+define('TESTS_PATH',        __DIR__ . '/../application/tests');
+define('CONFIG_PATH',       __DIR__ . '/../application/config');
+
+require CONFIG_PATH . DIRECTORY_SEPARATOR . 'environment.php';
+define('MIGRATIONS_PATH',   __DIR__ . '/../application/db/migrations' . DIRECTORY_SEPARATOR . APP_ENVIRONMENT);
+
+spl_autoload_register(function($class) {
+    $inVendorPath = VENDOR_PATH . DIRECTORY_SEPARATOR . 'idzn' . DIRECTORY_SEPARATOR .
+        str_ireplace('\\', '/', $class) . '.php';
+    $inRootPath = ROOT_PATH . DIRECTORY_SEPARATOR . str_ireplace('\\', '/', $class) . '.php';
+    if (file_exists($inVendorPath)) include_once $inVendorPath;
+    if (file_exists($inRootPath)) include_once $inRootPath;
+});
+
+(new Generator($argc, $argv))->run();
+

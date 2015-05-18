@@ -1,0 +1,16 @@
+{
+    "name": "idzn/martin",
+    "description": "framework",
+    "type": "project",
+    "require": {
+        "michelf/php-markdown": "^1.5"
+    },
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "idzn",
+            "email": "idzn@yandex.ru"
+        }
+    ],
+    "minimum-stability": "stable"
+}

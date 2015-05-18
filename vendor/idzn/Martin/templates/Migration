@@ -1,0 +1,24 @@
+<?php
+
+namespace application\db\migrations\{{env}};
+
+use application\custom\Migration;
+
+class {{name}} extends Migration
+{
+    public function __construct()
+    {
+        parent::__construct();
+
+    }
+
+    public function up()
+    {
+
+    }
+
+    public function down()
+    {
+
+    }
+} 
