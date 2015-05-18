@@ -19,7 +19,7 @@ class View extends \Martin\View
 
     public function __destruct()
     {
-        parent::__destruct();
+
     }
 
 

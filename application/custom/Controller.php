@@ -27,7 +27,5 @@ class Controller extends \Martin\Controller
         if (isset($_SESSION)) {
             App::debugger()->inspect($_SESSION, '$_SESSION');
         }
-
     }
-
 }

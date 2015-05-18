@@ -19,9 +19,7 @@ class Controller
     use CommonTrait;
     use UrlMethodsTrait;
 
-
-
-    public $layout = 'main';
+    public $layout = 'default';
 
     public function __construct()
     {

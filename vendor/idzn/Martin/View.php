@@ -7,7 +7,6 @@
 
 namespace Martin;
 
-use application\custom\Register;
 use Martin\exceptions\RuntimeError;
 use Martin\traits\CommonTrait;
 use Martin\traits\UrlMethodsTrait;
