@@ -5,5 +5,9 @@
  * @license https://github.com/idzn/Martin/blob/master/LICENSE
  */
 
-// loc / dev / pro
-define('APP_ENVIRONMENT', 'loc');
+ini_set('display_errors', true);
+error_reporting(E_ALL & ~E_STRICT);
+
+return [];
+
+

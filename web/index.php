@@ -9,7 +9,7 @@ use Martin\Application;
 
 define('ROOT_PATH',         __DIR__ . '/..');
 define('WEB_PATH',          __DIR__ . '/../web');
-define('ASSETS_PATH',          __DIR__ . '/../web/assets');
+define('ASSETS_PATH',       __DIR__ . '/../web/assets');
 define('VENDOR_PATH',       __DIR__ . '/../vendor');
 define('CONFIG_PATH',       __DIR__ . '/../application/config');
 define('CONTROLLERS_PATH',  __DIR__ . '/../application/controllers');
@@ -28,7 +28,9 @@ spl_autoload_register(function($class) {
 require VENDOR_PATH . '/autoload.php';
 
 require CONFIG_PATH . DIRECTORY_SEPARATOR . 'environment.php';
-require CONFIG_PATH . DIRECTORY_SEPARATOR . APP_ENVIRONMENT . '.config.php';
-require CONFIG_PATH . DIRECTORY_SEPARATOR . 'routes.php';
+$proConfig = require CONFIG_PATH . DIRECTORY_SEPARATOR . 'pro.config.php';
+$envConfig = require CONFIG_PATH . DIRECTORY_SEPARATOR . APP_ENVIRONMENT . '.config.php';
+$config = array_replace_recursive($proConfig, $envConfig);
+
 (new Application($config))->run();
 

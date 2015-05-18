@@ -5,35 +5,43 @@
  * @license https://github.com/idzn/Martin/blob/master/LICENSE
  */
 
-ini_set('display_errors', true);
-error_reporting(E_ALL & ~E_STRICT);
+ini_set('display_errors', false);
+error_reporting(0);
 
-$config = [
+return [
     'app' => [
         'name' => 'Martin',
         'protocol' => 'http',
         'host' => 'martin',
+    ],
+    'routing' => [
+        'routes' => [
+            'home' => ['GET', '/', 'martin:index'],
+            'signin' => ['GET, POST', '/signin', 'main:signin'],
+            'signout' => ['GET', '/signout', 'main:signout'],
+            'signup' => ['GET, POST', '/signup', 'main:signup'],
+            'blog' => ['GET', '/blog', 'blog:index'],
+            'blog_show' => ['GET', '/blog/show/{int}', 'blog:show'],
+            'admin_home' => ['GET', '/admin', 'admin/main:index'],
+        ],
+        'placeholders' => [
+            '{str}' => '[a-zA-Z]+',
+            '{int}' => '[\d]+',
+            '{any}' => '[^\/]+',
+            '{:-)}' => '[^\/]+',
+        ],
     ],
     'components' => [
         'db' => [
             'tablePrefix' => '',
             'persistent' => true,
             /*
-             * SQLite3
-             */
-            'type' => 'sqlite',
-            'dsn' => 'sqlite:' . DB_PATH . '/db.db',
-            'user' => null,
-            'pass' => null,
-            /*
              * MySQL
              */
-            /*
             'type' => 'mysql',
             'dsn' => 'mysql:host=localhost;dbname=martin;',
             'user' => 'root',
             'pass' => 'qwerty123',
-            */
         ],
         'user' => [],
         'flash' => [],
@@ -52,3 +60,5 @@ $config = [
 ];
 
 
+
+ 

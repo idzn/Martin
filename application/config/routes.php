@@ -5,22 +5,8 @@
  * @license https://github.com/idzn/Martin/blob/master/LICENSE
  */
 
-$config['routing'] = [
-    'routes' => [
-        'home' => ['GET', '/', 'martin:index'],
-        'signin' => ['GET, POST', '/signin', 'main:signin'],
-        'signout' => ['GET', '/signout', 'main:signout'],
-        'signup' => ['GET, POST', '/signup', 'main:signup'],
-        'blog' => ['GET', '/blog', 'blog:index'],
-        'blog_show' => ['GET', '/blog/show/{int}', 'blog:show'],
-        'admin_home' => ['GET', '/admin', 'admin/main:index'],
-    ],
-    'placeholders' => [
-        '{str}' => '[a-zA-Z]+',
-        '{int}' => '[\d]+',
-        '{any}' => '[^\/]+',
-        '{:-)}' => '[^\/]+',
-    ],
+return [
+
 ];
 
 if (APP_ENVIRONMENT != 'production') {
