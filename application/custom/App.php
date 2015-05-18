@@ -77,11 +77,11 @@ class App
     }
 
     /**
-     * @return \Martin\components\Pager\Pager
+     * @return \Martin\components\Paginator\Paginator
      */
-    public static function pager()
+    public static function paginator()
     {
-        return Container::get('pager', '\Martin\components\Pager\Pager');
+        return Container::get('paginator', '\Martin\components\Paginator\Paginator');
     }
 
     /**

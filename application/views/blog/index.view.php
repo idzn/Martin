@@ -23,4 +23,4 @@ use application\custom\App;
         <hr/>
     <?php } ?>
 <?php } ?>
-<?=App::pager()->renderPagination()?>
+<?=App::paginator()->renderPagination()?>

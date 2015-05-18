@@ -4704,40 +4704,40 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
-.pager {
+.paginator {
   padding-left: 0;
   margin: 20px 0;
   text-align: center;
   list-style: none;
 }
-.pager li {
+.paginator li {
   display: inline;
 }
-.pager li > a,
-.pager li > span {
+.paginator li > a,
+.paginator li > span {
   display: inline-block;
   padding: 5px 14px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 15px;
 }
-.pager li > a:hover,
-.pager li > a:focus {
+.paginator li > a:hover,
+.paginator li > a:focus {
   text-decoration: none;
   background-color: #eee;
 }
-.pager .next > a,
-.pager .next > span {
+.paginator .next > a,
+.paginator .next > span {
   float: right;
 }
-.pager .previous > a,
-.pager .previous > span {
+.paginator .previous > a,
+.paginator .previous > span {
   float: left;
 }
-.pager .disabled > a,
-.pager .disabled > a:hover,
-.pager .disabled > a:focus,
-.pager .disabled > span {
+.paginator .disabled > a,
+.paginator .disabled > a:hover,
+.paginator .disabled > a:focus,
+.paginator .disabled > span {
   color: #777;
   cursor: not-allowed;
   background-color: #fff;
@@ -6312,8 +6312,8 @@ button.close {
 .navbar-header:after,
 .navbar-collapse:before,
 .navbar-collapse:after,
-.pager:before,
-.pager:after,
+.paginator:before,
+.paginator:after,
 .panel-body:before,
 .panel-body:after,
 .modal-footer:before,
@@ -6333,7 +6333,7 @@ button.close {
 .navbar:after,
 .navbar-header:after,
 .navbar-collapse:after,
-.pager:after,
+.paginator:after,
 .panel-body:after,
 .modal-footer:after {
   clear: both;

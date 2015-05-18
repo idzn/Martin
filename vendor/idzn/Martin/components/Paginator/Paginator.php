@@ -5,17 +5,15 @@
  * @license https://github.com/idzn/Martin/blob/master/LICENSE
  */
 
-namespace Martin\components\Pager;
+namespace Martin\components\Paginator;
 
 use application\custom\Controller;
 use Martin\traits\UrlMethodsTrait;
 
-class Pager
+class Paginator
 {
     use UrlMethodsTrait;
-    /**
-     * @var Runtime
-     */
+
     private $config;
     private $originalUrl;
     private $limit;

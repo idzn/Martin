@@ -48,7 +48,7 @@ return [
         'secure' => [
             'csrf_token' => 'f4PoaJd7a3mK3HB2mldIs', // must be not empty!
         ],
-        'pager' => [],
+        'paginator' => [],
         'debugger' => [
             'enabled' => true,
             'visibled' => true,

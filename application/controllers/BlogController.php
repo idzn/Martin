@@ -20,11 +20,11 @@ class BlogController extends Controller
 
     public function action_index()
     {
-        App::pager()->setOriginalUrl(App::runtime()->uri);
-        App::pager()->setLimit(3);
-        App::pager()->setPage((isset($_GET['page'])) ? $_GET['page'] : 1);
-        App::pager()->setCount($this->modelArticles->getCount());
-        $data = $this->modelArticles->getAll(App::pager()->getLimit() * (App::pager()->getPage() - 1), App::pager()->getLimit());
+        App::paginator()->setOriginalUrl(App::runtime()->uri);
+        App::paginator()->setLimit(3);
+        App::paginator()->setPage((isset($_GET['page'])) ? $_GET['page'] : 1);
+        App::paginator()->setCount($this->modelArticles->getCount());
+        $data = $this->modelArticles->getAll(App::paginator()->getLimit() * (App::paginator()->getPage() - 1), App::paginator()->getLimit());
 
         if (empty($data)) throw new HttpError('404');
         App::runtime()->pageTitle = 'Блог';
