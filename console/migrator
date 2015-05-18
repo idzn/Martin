@@ -24,6 +24,8 @@ spl_autoload_register(function($class) {
     if (file_exists($inRootPath)) include_once $inRootPath;
 });
 
-require CONFIG_PATH . DIRECTORY_SEPARATOR . APP_ENVIRONMENT . '.config.php';
+require CONFIG_PATH . DIRECTORY_SEPARATOR . 'environment.php';
+$config = array_replace_recursive(require CONFIG_PATH . DIRECTORY_SEPARATOR . 'pro.config.php',
+    require CONFIG_PATH . DIRECTORY_SEPARATOR . APP_ENVIRONMENT . '.config.php');
 (new Migrator($argc, $argv, $config))->run();
 

@@ -24,6 +24,6 @@ spl_autoload_register(function($class) {
 });
 
 require CONFIG_PATH . DIRECTORY_SEPARATOR . 'environment.php';
-require CONFIG_PATH . DIRECTORY_SEPARATOR . APP_ENVIRONMENT . '.config.php';
-require CONFIG_PATH . DIRECTORY_SEPARATOR . 'routes.php';
+$config = array_replace_recursive(require CONFIG_PATH . DIRECTORY_SEPARATOR . 'pro.config.php',
+    require CONFIG_PATH . DIRECTORY_SEPARATOR . APP_ENVIRONMENT . '.config.php');
 (new Tester($config))->run();
